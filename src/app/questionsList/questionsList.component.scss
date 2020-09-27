@@ -1,0 +1,40 @@
+.questions_container {
+  margin: auto;
+  width: 40vw;
+}
+
+.main_title {
+  text-align: center;
+}
+
+.question {
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.question_text {
+  font-weight: bolder;
+}
+
+.answers_radio_group {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.answers-radio-button {
+  margin: 5px;
+}
+
+code {
+  background: #F5F2F0;
+  padding: 3px;
+}
+
+.button_submit_container {
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  margin: auto auto 10px;
+}
