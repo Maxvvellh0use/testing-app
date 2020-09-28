@@ -4,6 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## [Deploy](https://testing-app-maxvvellh0use.netlify.app/)
 
+### ![image](./src/assets/img/screen-app.png)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
