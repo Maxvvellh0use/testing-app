@@ -1,9 +1,13 @@
 .questions_container {
   margin: auto;
   width: 40vw;
+  @media (max-width: 768px) {
+    width: 80vw;
+  }
 }
 
 .main_title {
+  margin-top: 2vh;
   text-align: center;
 }
 
@@ -21,6 +25,11 @@
   margin-top: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.answer_text {
+  white-space: pre-wrap;
+  word-wrap: break-word
 }
 
 .answers-radio-button {

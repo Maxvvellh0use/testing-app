@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {QuestionData} from '../types';
+import { Component } from '@angular/core';
+import {Answers , QuestionData} from '../types';
 import {jsTestData} from '../data/jsTestData';
-import {getRandomSort} from './helpers/getRandomSort';
+import {NgForm} from '@angular/forms';
+import {ActivatedRoute , Router} from '@angular/router';
+import {getErrors} from './helpers/getErrors';
+
 
 @Component({
   selector: 'app-answers-list',
@@ -9,16 +12,26 @@ import {getRandomSort} from './helpers/getRandomSort';
   styleUrls: ['./questionsList.component.scss'],
 })
 
-export class QuestionsListComponent implements OnInit {
+export class QuestionsListComponent {
+  errors = 0;
   questionsData: QuestionData[] = jsTestData;
+  correctAnswers: Answers = {};
 
-  checkTest = () => {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router  ) {}
 
+  checkTest = async (formTest: NgForm) => {
+    const currentAnswers = formTest.value;
+    jsTestData.map(data => {
+      this.correctAnswers[data._id] = data.answerOptions.correct;
+    });
+
+    this.errors = getErrors(currentAnswers, this.correctAnswers);
+
+    await this.router.navigate(['result-window-component'],
+      { queryParams: { errors: this.errors }});
+    this.router.getCurrentNavigation();
   }
 
-  ngOnInit(): void {
-    // this.allAnswers = jsTestData.map(data => {
-    //   return getRandomSort([...data.answerOptions.incorrect, data.answerOptions.correct]);
-    // });
-  }
 }

@@ -1,0 +1,15 @@
+<section class="result_section">
+  <div class="result_container">
+    <div class="result_border_block">
+      <h1>
+        Результат:
+        {{ successAnswers }} / {{ allAnswers.length }}
+      </h1>
+      <button mat-raised-button
+              (click)="tryAgain()"
+              color="primary">
+        Попробовать еще раз
+      </button>
+    </div>
+  </div>
+</section>

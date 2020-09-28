@@ -2,7 +2,9 @@
   <h1 class="main_title">Javascript Test</h1>
   <section class="questions_list_form_section">
     <div class="questions_list_form_container">
-      <form>
+      <form #formTest="ngForm"
+            (ngSubmit)="checkTest(formTest)"
+            ngNativeValidate>
         <div *ngFor="let questionData of questionsData"
              class="questions_container">
           <div class="question">
@@ -15,18 +17,23 @@
                 {{ questionData.code }}
             </code>
             <mat-radio-group
-              class="answers_radio_group">
+              name="{{ questionData._id }}" ngModel
+              class="answers_radio_group"
+              required>
               <mat-radio-button class="answers-radio-button"
                                 color="primary"
                                 *ngFor="let answer of questionData.answerOptions.all"
-                                [value]="answer">
-                <code>{{ answer }}</code>
+                                [value]="answer"
+                                required>
+                <code class="answer_text">{{ answer }}</code>
               </mat-radio-button>
             </mat-radio-group>
           </div>
         </div>
         <div class="button_submit_container">
-          <button mat-raised-button color="primary">Submit</button>
+            <button mat-raised-button
+                    color="primary">Submit
+            </button>
         </div>
       </form>
     </div>

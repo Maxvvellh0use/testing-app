@@ -1,5 +1,6 @@
 export const jsTestData = [
   {
+    _id: 1,
     question: 'Какие конструкции для циклов есть в javascript?',
     code: '',
     answerOptions: {
@@ -10,28 +11,34 @@ export const jsTestData = [
     },
   },
   {
+    _id: 2,
     question: 'Какой вариант правильно объявляет функцию f, возвращающую сумму двух аргументов ?',
     code: '',
     answerOptions: {
       all: ['let f = new Function("a,b", "return a+b")',
         'let f = new Function("a", "b", "return a+b")',
       'let f = (a, b) => { a + b }',
-        'let f = function(a,b) { return a+b }'],
+        'let f = function(a,b) ' +
+        '{ return a+b }'],
       correct: 'let f = function(a,b) { return a+b }'
     },
   },
   {
+    _id: 3,
     question: 'Какой код корректно найдёт максимальное значение в непустом массиве arr?',
     code: '',
     answerOptions: {
       all: ['Math.max.apply(null, arr)',
         'Math.max(arr)', 'arr.findMax()',
-        'arr.reduce(function(prev, item) { return Math.max(prev, item) })'
+        'arr.reduce(function(prev, item) ' +
+        '{ return Math.max(prev, item) })'
       ],
-      correct: 'arr.reduce(function(prev, item) { return Math.max(prev, item) })',
+      correct: 'arr.reduce(function(prev, item) ' +
+        '{ return Math.max(prev, item) })',
     },
   },
   {
+    _id: 4,
     question: 'Чему равен typeof null в режиме use strict?',
     code: '',
     answerOptions: {
@@ -40,6 +47,7 @@ export const jsTestData = [
     },
   },
   {
+    _id: 5,
     question: 'Чему равно 0 || 1 && 2 || 3 ?',
     code: '',
     answerOptions: {
@@ -48,6 +56,7 @@ export const jsTestData = [
     },
   },
   {
+    _id: 6,
     question: 'Объявлена функция:',
     code: 'function F() {} ' +
       'Чем является F.prototype?',
@@ -57,6 +66,7 @@ export const jsTestData = [
     },
   },
   {
+    _id: 7,
     question: 'Чему равно i в конце кода?',
     code: 'for(var i=0; i<10; i++) {\n' +
       '  console.log(i);\n' +
@@ -68,6 +78,7 @@ export const jsTestData = [
     },
   },
   {
+    _id: 8,
     question: 'Правда ли что a == b?',
     code: 'a = [1, 2, 3];\n' +
       'b = [1, 2, 3];',
